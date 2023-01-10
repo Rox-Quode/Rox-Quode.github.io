@@ -26,10 +26,28 @@ h1 {
     display: grid; 
     place-items: center;
     text-align: center;
-    transform: translateY(30%);
 }
 
 .padded { padding: 10%; }
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid;
+    color: #4ADF86;
+}
+
+a:hover,
+a:focus {
+    color: #b7f2cf;
+}
 
 footer {
     text-align: center;
