@@ -1,4 +1,4 @@
-# Rox-Quode.github.io
+# basic JS portfolio
 
 ## This is my mini portfolio dedicated to JavaScript projects
 
