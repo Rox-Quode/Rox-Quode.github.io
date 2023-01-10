@@ -1,0 +1,188 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Scorecard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.3.4/gridlex.min.css" integrity="sha512-qKS/p8t2fstejgMI7eISnhmfAQvjNjk+Fp6yD+qGWfG0CGURR9MZV86/pMy6yc07wZmGyydy/nPwdQxPw9ePNg==" crossorigin="anonymous" />
+    <link href="http://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
+   <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E5E5E5;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+}
+
+[class*="col-"] {
+    margin: 0;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    width: 650px;
+    height: 450px;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B244A;
+    border: 6px solid white;
+    border-radius: 15px;
+}
+
+.padded {
+    padding: 5%;
+}
+.center {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+h2 {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    text-align: center;
+    color: #F94F6D;
+    font-size: 5.5rem;
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+h3 {
+    color: white;
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+.score{
+    background-color: #0a0001;
+    border-radius: 10px;
+    width: 150px;
+    margin: 1.5rem;
+    line-height: 120px;
+    height: 120px;
+    line-height: 120px;
+    /* display: flex;
+    justify-content: center; */
+}
+
+span{
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+button {
+    font-family: 'Cursed Timer ULiL', sans-serif;
+    background-color: inherit;
+    border: 1px solid #9AABD8;
+    border-radius: 5px;
+    color: #9AABD8;
+    padding: 0.5rem;
+}
+button:hover {
+    background-color: #5f6680;
+}
+
+@media (max-width: 700px) {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .container {
+        width: 450px;
+        height: 500px;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    .score {
+        height: 80px;
+    }
+}
+   </style>
+</head>
+<body>
+    <div class="container flex-container padded">
+        <div class="grid-spaceAround center margin-sm">
+            <h3 class="col-12 center"> HOME </h3>
+            <div class="score padded padded-sm col-6_sm-8"> 
+                <h2 id="home-score"> 0 </h2>
+            </div>
+            <div class="col-12">
+                <button id="home-score-btn-1" onclick="increaseHomeScoreOne()"> + 1 </button>
+                <button id="home-score-btn-2" onclick="increaseHomeScoreTwo()"> + 2 </button>
+                <button id="home-score-btn-3" onclick="increaseHomeScoreThree()"> + 3 </button>
+            </div>
+            </div>
+        <div class="grid-spaceAround center margin-sm">
+            <h3 class="col-12 center"> GUEST </h3>
+            <div class="score padded  padded-sm col-6_sm-8"> 
+                <h2 id="guest-score"> 0 </h2>
+            </div>
+            <div class="col-12">
+                <button id="guest-score-btn-1" onclick="increaseGuestScoreOne()"> + 1 </button>
+                <button id="guest-score-btn-2" onclick="increaseGuestScoreTwo()"> + 2 </button>
+                <button id="guest-score-btn-3" onclick="increaseGuestScoreThree()"> + 3 </button>
+        </div>
+        </div>
+    </div>
+    
+    <script>
+        let homeScore = document.getElementById("home-score")
+let home = 0
+    
+function increaseHomeScoreOne(){
+    home = home + 1
+    homeScore.textContent = home
+    console.log(home)
+}
+
+function increaseHomeScoreTwo(){
+    home = home + 2
+    homeScore.textContent = home
+    console.log(home)
+}
+
+function increaseHomeScoreThree(){
+    home = home + 3
+    homeScore.textContent = home
+    console.log(home)
+}
+
+let guestScore = document.getElementById("guest-score")
+let guest = 0
+    
+function increaseGuestScoreOne(){
+    guest = guest + 1
+    guestScore.textContent = guest
+    console.log(guest)
+}
+
+function increaseGuestScoreTwo(){
+    guest = guest + 2
+    guestScore.textContent = guest
+    console.log(guest)
+}
+
+function increaseGuestScoreThree(){
+    guest = guest + 3
+    guestScore.textContent = guest
+    console.log(guest)
+}
+    </script>
+</body>
+</html>
