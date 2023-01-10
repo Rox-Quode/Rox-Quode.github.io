@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+    margin: 0;
+    padding: 2em;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #111827;
+    display: grid;
+    place-items: center;
+    
+}
+
+.capped-width{
+    min-width: 600px;
+}
+.header{
+    background-color: #6943FF;
+    color: white;
+    padding: 5%;
+    text-align: center;
+  
+}
+.hide{
+    display: none;
+}
+.input{
+    display: block;
+    text-align: center;
+    line-height: 24;
+    font-size: 3rem;
+    background-color: #6943FF;
+    color: white;
+    height: 83px;
+    width: 117px;
+    border: 2px solid #B295FF;
+    border-radius: 5px;
+    margin: auto;
+    font-weight: 700;
+}
+
+.input:focus{
+    outline: none;
+}
+
+input::placeholder {
+    color: #B295FF;
+    opacity: .5;
+}
+button{
+    width: 117px;
+    height: 43px;
+    margin-top: 1.5rem;
+    color: #3D3D3D;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 7px;
+    border-color: transparent;
+}
+
+button:hover{
+    background-color: #c4c2c2;
+}
+
+.conversions{
+    background-color: #1F2937;
+    color: #CCC1FF;
+    text-align: center;
+    padding: 1rem;
+}
+
+.elevation{
+    background-color: #273549;
+    padding: 2%;
+    margin-bottom: 1rem;
+}
+div:last-child{margin-bottom: 0;}
+
+@media (max-width: 700px) {
+    .capped-width{
+        min-width: 300px;
+        max-width: 500px;
+    }
+    .hide{
+        display: inline-block;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="capped-width">
+        <section class="header">
+            <h2> Metric / <br class="hide"> Imperial Unit Conversion</h2>
+            <input type="text" id="input-el" placeholder="No." class="input"></input>
+            <button id="convert-btn"> Convert </button>
+        </section>
+        <section class="conversions">
+            <div class="elevation">
+                <h3>Length (Meter/ Feet)</h3>
+                <p id="length-el"></p>
+            </div>
+            <div class="elevation">
+                <h3>Volume (Liters/ Gallons)</h3>
+                <p id="volume-el"></p>
+            </div>
+            <div class="elevation">
+                <h3>Mass (Kilograms/ Pounds)</h3>
+                <p id="mass-el"></p>
+            </div>
+        </section>
+     </section>
+    <script>
+        /*
+    1 meter = 3.281 feet
+    1 liter = 0.264 gallon
+    1 kilogram = 2.204 pound
+    */
+
+    const inputEl = document.getElementById("input-el")
+    const inputBtn = document.getElementById("convert-btn")
+    const lengthEl = document.getElementById("length-el")
+    const volumeEl = document.getElementById("volume-el")
+    const massEl = document.getElementById("mass-el")
+
+    inputEl.value = ""
+    inputBtn.addEventListener("click", function(e) {
+    lengthEl.innerHTML = `${inputEl.value} meters = ${(Number(inputEl.value)* 3.281).toFixed(3)} feet | ${inputEl.value} feet = ${(Number(inputEl.value)/ 3.281).toFixed(3)} meters`
+    volumeEl.innerHTML = `${inputEl.value} liters = ${(Number(inputEl.value)* 0.264).toFixed(3)} gallons | ${inputEl.value} gallons = ${(Number(inputEl.value)/ 0.264).toFixed(3)} liters`
+    massEl.innerHTML = `${inputEl.value} kilos = ${(Number(inputEl.value)* 2.204).toFixed(3)} pounds | ${inputEl.value} pounds = ${(Number(inputEl.value)/ 2.204).toFixed(3)} kilos`
+    }) 
+    </script>
+</body>
+</html>
